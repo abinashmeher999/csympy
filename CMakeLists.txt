@@ -174,6 +174,13 @@ if (WITH_OPENMP)
     endif()
 endif()
 
+
+if (WITH_RUBY)
+    find_package(Ruby REQUIRED)
+    include_directories(${RUBY_INCLUDE_DIRS})
+    set(LIBS ${LIBS} ${RUBY_LIBRARY})
+endif ()
+
 if (CMAKE_BUILD_TYPE STREQUAL "Debug")
     set(HAVE_TEUCHOS_DEBUG yes)
     set(HAVE_TEUCHOS_DEBUG_RCP_NODE_TRACING yes)
@@ -192,11 +199,6 @@ if (WITH_PYTHON)
     find_package(Cython REQUIRED)
     add_subdirectory(csympy)
 endif ()
-
-if (WITH_RUBY)
-    find_package(Ruby REQUIRED)
-endif ()
-
 
 message("\n")
 message("Configuration results")

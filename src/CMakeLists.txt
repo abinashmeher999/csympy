@@ -59,4 +59,5 @@ install(TARGETS symengine
 install(FILES ${HEADERS} "${symengine_BINARY_DIR}/src/symengine_config.h"
     DESTINATION include)
 
+add_subdirectory(ruby)
 add_subdirectory(tests)
