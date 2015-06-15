@@ -1,1 +1,1 @@
-add_subdirectoy(lib/symengine)
+add_subdirectory(lib/symengine)
