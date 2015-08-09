@@ -35,6 +35,21 @@ void Init_symengine() {
     rb_define_alloc_func(c_symbol, cbasic_alloc);
     rb_define_method(c_symbol, "initialize", csymbol_init, 1);
 
+    //Add class
+    c_add = rb_define_class_under(m_symengine, "Add", c_basic);
+    rb_define_alloc_func(c_add, cbasic_alloc);
+    rb_define_method(c_add, "initialize", cadd_init, 1);
+
+    //Mul Class
+    c_mul = rb_define_class_under(m_symengine, "Mul", c_basic);
+    rb_define_alloc_func(c_mul, cbasic_alloc);
+    rb_define_method(c_mul, "initialize", cmul_init, 1);
+
+    //Pow Class
+    c_pow = rb_define_class_under(m_symengine, "Pow", c_basic);
+    rb_define_alloc_func(c_pow, cbasic_alloc);
+    rb_define_method(c_pow, "initialize", cpow_init, 1);
+
     //Integer class
     c_integer = rb_define_class_under(m_symengine, "Integer", c_basic);
     rb_define_alloc_func(c_integer, cbasic_alloc);
